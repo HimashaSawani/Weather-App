@@ -27,4 +27,7 @@ git clone <repository-url>
 cd <folder-name>
 ##Preview
 
+## Preview
+
 ![Weather App Screenshot](weatherappss.png)
+
