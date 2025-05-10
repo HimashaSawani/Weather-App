@@ -20,14 +20,6 @@ This is a beginner-friendly weather app built using **HTML**, **CSS**, **JavaScr
 
 To run this project locally, follow the steps below:
 
-### 1. Clone the repository
-
-```bash
-git clone <repository-url>
-cd <folder-name>
-##Preview
-
 ## Preview
 
-![Weather App Screenshot](weatherappss.png)
-
+![Weather App Screenshot](./weatherappss.png)
