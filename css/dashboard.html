@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WeatherNow - Your Global Weather Companion</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-cloud-sun"></i>
+          WeatherNow
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="" class="nav-link">World Weather</a></li>
+          <li class="nav-item"><a href="" class="nav-link">Maps</a></li>
+          <li class="nav-item"><a href="" class="nav-link">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <!-- Search Section -->
+      <div class="search-container">
+        <div class="search-header">
+          <i class="fas fa-location-dot location-icon"></i>
+          <h2>Find Weather By Location</h2>
+        </div>
+        <div class="search-form">
+          <input type="text" class="search-input" placeholder="Enter city name or zip code...">
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div class="search-history">
+          <h3 class="history-title">Recent Searches</h3>
+          <ul class="history-list">
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              New York, USA
+            </li>
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              London, UK
+            </li>
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              Tokyo, Japan
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Current Weather Section -->
+      <div class="weather-card">
+        <div class="weather-header">
+          <div class="location-info">
+            <h2>San Francisco</h2>
+            <p>California, USA • Saturday, May 10, 2025 • 2:30 PM</p>
+          </div>
+          <div class="weather-icon">
+            <i class="fas fa-cloud-sun"></i>
+          </div>
+        </div>
+        <div class="weather-body">
+          <div class="temperature">72°F</div>
+          <div class="weather-description">Partly Cloudy</div>
+          
+          <div class="weather-info">
+            <div class="info-item">
+              <div class="info-label">Feels Like</div>
+              <div class="info-value">74°F</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Humidity</div>
+              <div class="info-value">67%</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Wind</div>
+              <div class="info-value">8 mph</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Pressure</div>
+              <div class="info-value">1012 hPa</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">UV Index</div>
+              <div class="info-value">5 (Moderate)</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Visibility</div>
+              <div class="info-value">10 km</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Forecast Section -->
+      <div class="forecast-section">
+        <h2 class="section-title">5-Day Forecast</h2>
+        <div class="forecast-cards">
+          <div class="forecast-card">
+            <div class="forecast-day">Sunday</div>
+            <div class="forecast-icon">
+              <i class="fas fa-sun"></i>
+            </div>
+            <div class="forecast-temp">
+              <div class="max-temp">75°F</div>
+              <div class="min-temp">62°F</div>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Monday</div>
+            <div class="forecast-icon">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="forecast-temp">
+              <div class="max-temp">73°F</div>
+              <div class="min-temp">60°F</div>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Tuesday</div>
+            <div class="forecast-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <div class="forecast-temp">
+              <div class="max-temp">70°F</div>
+              <div class="min-temp">59°F</div>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Wednesday</div>
+            <div class="forecast-icon">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+            <div class="forecast-temp">
+              <div class="max-temp">68°F</div>
+              <div class="min-temp">57°F</div>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Thursday</div>
+            <div class="forecast-icon">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <div class="forecast-temp">
+              <div class="max-temp">71°F</div>
+              <div class="min-temp">58°F</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- World Weather Section -->
+      <div class="world-container">
+        <div class="world-header">
+          <h2 class="world-title">Global Weather Overview</h2>
+          <p class="world-subtitle">Check current weather conditions from major cities around the world</p>
+        </div>
+
+        <div class="map-container">
+          <div style="color:#87ceeb; font-size:20px; text-align:center;">
+            Interactive World Weather Map
+            <br><span style="font-size:14px;">(Map visualization would be displayed here)</span>
+          </div>
+          <div class="map-controls">
+            <button class="map-control-btn"><i class="fas fa-plus"></i></button>
+            <button class="map-control-btn"><i class="fas fa-minus"></i></button>
+            <button class="map-control-btn"><i class="fas fa-location-crosshairs"></i></button>
+          </div>
+        </div>
+
+        <div class="global-weather-grid">
+          <div class="global-weather-card">
+            <div class="city-header">
+              <span class="city-name">London</span>
+              <span class="country-badge">UK</span>
+            </div>
+            <div class="weather-main">
+              <div class="weather-icon-large">
+                <i class="fas fa-cloud-rain"></i>
+              </div>
+              <div class="weather-details">
+                <div class="temperature-large">59°F</div>
+                <div class="weather-condition">Light Rain</div>
+              </div>
+            </div>
+            <div class="weather-meta">
+              <div class="meta-item">
+                <span class="meta-label">Humidity</span>
+                <span class="meta-value">78%</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Wind</span>
+                <span class="meta-value">12 mph</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pressure</span>
+                <span class="meta-value">1008 hPa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="global-weather-card">
+            <div class="city-header">
+              <span class="city-name">Tokyo</span>
+              <span class="country-badge">Japan</span>
+            </div>
+            <div class="weather-main">
+              <div class="weather-icon-large">
+                <i class="fas fa-sun"></i>
+              </div>
+              <div class="weather-details">
+                <div class="temperature-large">78°F</div>
+                <div class="weather-condition">Sunny</div>
+              </div>
+            </div>
+            <div class="weather-meta">
+              <div class="meta-item">
+                <span class="meta-label">Humidity</span>
+                <span class="meta-value">65%</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Wind</span>
+                <span class="meta-value">5 mph</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pressure</span>
+                <span class="meta-value">1015 hPa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="global-weather-card">
+            <div class="city-header">
+              <span class="city-name">Sydney</span>
+              <span class="country-badge">Australia</span>
+            </div>
+            <div class="weather-main">
+              <div class="weather-icon-large">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+              <div class="weather-details">
+                <div class="temperature-large">68°F</div>
+                <div class="weather-condition">Partly Cloudy</div>
+              </div>
+            </div>
+            <div class="weather-meta">
+              <div class="meta-item">
+                <span class="meta-label">Humidity</span>
+                <span class="meta-value">72%</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Wind</span>
+                <span class="meta-value">10 mph</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pressure</span>
+                <span class="meta-value">1013 hPa</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="global-weather-card">
+            <div class="city-header">
+              <span class="city-name">Rio de Janeiro</span>
+              <span class="country-badge">Brazil</span>
+            </div>
+            <div class="weather-main">
+              <div class="weather-icon-large">
+                <i class="fas fa-sun"></i>
+              </div>
+              <div class="weather-details">
+                <div class="temperature-large">84°F</div>
+                <div class="weather-condition">Sunny</div>
+              </div>
+            </div>
+            <div class="weather-meta">
+              <div class="meta-item">
+                <span class="meta-label">Humidity</span>
+                <span class="meta-value">70%</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Wind</span>
+                <span class="meta-value">7 mph</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Pressure</span>
+                <span class="meta-value">1010 hPa</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3 class="footer-title">WeatherNow</h3>
+          <p>Your reliable source for accurate weather forecasts and real-time conditions worldwide.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <script src="search.js"></script> <!-- For city search -->
+
+        <script src="main.js"></script>
+        <script src="world.js"></script>
+
+
+        <div class="footer-section">
+          <h3 class="footer-title">Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">World Weather</a></li>
+            <li><a href="#">Maps</a></li>
+            <li><a href="#">News & Updates</a></li>
+            <li><a href="#">Download App</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
