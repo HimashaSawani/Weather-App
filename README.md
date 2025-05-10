@@ -9,6 +9,17 @@ This is a beginner-friendly weather app built using **HTML**, **CSS**, **JavaScr
 - Responsive design for mobile and desktop
 - Clear and simple UI design with icons representing different weather conditions
 
+  ## Setup Instructions
+
+Follow these steps to run the project locally:
+
+### 1. Clone the Repository
+
+```bash
+git clone <repository-url>
+cd <folder-name>
+
+
 ## Tech Stack
 
 - **HTML** – Structure of the web pages
@@ -16,9 +27,6 @@ This is a beginner-friendly weather app built using **HTML**, **CSS**, **JavaScr
 - **JavaScript** – Handling the functionality and connecting to the weather API
 - **OpenWeatherMap API** – Fetching live weather data
 
-## Setup Instructions
-
-To run this project locally, follow the steps below:
 
 ## Preview
 
