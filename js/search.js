@@ -1,40 +1,33 @@
 let apiKey = "fb99daa273dc4b6b7c33cc53087c6f87";
-let searchinput = document.querySelector(`.searchinput`);
+let searchButton = document.querySelector(".search-button");
+let searchInput = document.querySelector(".search-input");
 
-async function search(city, state = '', country = '') {
+async function search(city) {
     if (!city.trim()) {
-        // Handle empty input case
         alert("Please enter a city name.");
         return;
     }
 
     try {
-        let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city},${state},${country}&appid=${apiKey}`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=${apiKey}`;
         let response = await fetch(url);
 
         if (response.ok) {
             let data = await response.json();
             console.log(data);
 
-            let box = document.querySelector(".return");
-            box.style.display = "block";
+            // Update the weather info on the page
+            document.querySelector(".city-name").innerHTML = `${data.name}, ${data.sys.country}`;
+            document.querySelector(".weather-temp").innerHTML = Math.floor(data.main.temp) + '°C';
+            document.querySelector(".weather-description").innerHTML = data.weather[0].description;
+            document.querySelector(".humidity").innerHTML = `Humidity: ${Math.floor(data.main.humidity)}%`;
+            document.querySelector(".wind").innerHTML = `Wind: ${Math.floor(data.wind.speed)} m/s`;
+            document.querySelector(".pressure").innerHTML = `Pressure: ${Math.floor(data.main.pressure)} hPa`;
+            document.querySelector(".sunrise").innerHTML = `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
+            document.querySelector(".sunset").innerHTML = `Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
 
-            let message = document.querySelector(".message");
-            message.style.display = "none";
-
-            let errormessage = document.querySelector(".error-message");
-            errormessage.style.display = "none";
-
-            let weatherImg = document.querySelector(".weather-img");
-            document.querySelector(".city-name").innerHTML = data.name;
-            document.querySelector(".weather-temp").innerHTML = Math.floor(data.main.temp) + '°';
-            document.querySelector(".wind").innerHTML = Math.floor(data.wind.speed) + " m/s";
-            document.querySelector(".pressure").innerHTML = Math.floor(data.main.pressure) + " hPa";
-            document.querySelector('.humidity').innerHTML = Math.floor(data.main.humidity) + "%";
-            document.querySelector(".sunrise").innerHTML = new Date(data.sys.sunrise * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-            document.querySelector(".sunset").innerHTML = new Date(data.sys.sunset * 1000).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
-
-            // Set weather icon based on weather conditions
+            // Set weather icon based on the weather condition
+            let weatherImg = document.querySelector(".weather-icon");
             switch (data.weather[0].main) {
                 case "Rain":
                     weatherImg.src = "img/rain.png";
@@ -46,7 +39,6 @@ async function search(city, state = '', country = '') {
                     weatherImg.src = "img/snow.png";
                     break;
                 case "Clouds":
-                case "Smoke":
                     weatherImg.src = "img/cloud.png";
                     break;
                 case "Mist":
@@ -63,34 +55,45 @@ async function search(city, state = '', country = '') {
                     weatherImg.src = "img/sun.png"; // Default weather icon
                     break;
             }
+
+            // Update search history
+            updateSearchHistory(city);
         } else {
-            // Handle errors such as city not found
-            let box = document.querySelector(".return");
-            box.style.display = "none";
-
-            let message = document.querySelector(".message");
-            message.style.display = "none";
-
-            let errormessage = document.querySelector(".error-message");
-            errormessage.style.display = "block";
+            alert("City not found. Please try again.");
         }
     } catch (error) {
-        // Catch any network errors or other issues
         console.error("Error fetching weather data:", error);
-        let box = document.querySelector(".return");
-        box.style.display = "none";
-
-        let message = document.querySelector(".message");
-        message.style.display = "none";
-
-        let errormessage = document.querySelector(".error-message");
-        errormessage.style.display = "block";
+        alert("Error fetching weather data. Please try again later.");
     }
 }
 
-searchinput.addEventListener('keydown', function (event) {
-    if (event.keyCode === 13 || event.which === 13) {
-        search(searchinput.value.trim()); // Ensure the input is trimmed before searching
-        console.log("Search triggered");
+function updateSearchHistory(city) {
+    // Add the searched city to the history list
+    const historyList = document.querySelector(".history-list");
+    const historyItem = document.createElement("li");
+    historyItem.classList.add("history-item");
+    historyItem.innerHTML = `<i class="fas fa-history"></i> ${city}`;
+    historyList.prepend(historyItem); // Add to the top of the list
+}
+
+// Search when button is clicked
+searchButton.addEventListener("click", function () {
+    const city = searchInput.value.trim();
+    if (city) {
+        search(city);
+    } else {
+        alert("Please enter a city name.");
+    }
+});
+
+// Optionally, search when "Enter" key is pressed
+searchInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        const city = searchInput.value.trim();
+        if (city) {
+            search(city);
+        } else {
+            alert("Please enter a city name.");
+        }
     }
 });
