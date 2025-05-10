@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App - Search Location</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <img src="/api/placeholder/40/40" alt="Weather Logo">
+        <span>WeatherNow</span>
+      </div>
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Current Weather</a></li>
+        <li class="nav-item"><a href="search.html" class="nav-link active">Search Location</a></li>
+        <li class="nav-item"><a href="world.html" class="nav-link">World Weather</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <div class="container">
+      <div class="search-container">
+        <div class="search-header">
+          <div class="location-icon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h2>Search for a location</h2>
+        </div>
+        
+        <form class="search-form">
+          <input type="text" class="search-input" placeholder="Enter city name or zip code...">
+          <button type="submit" class="search-button">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        
+        <div class="search-results">
+          <div class="search-message message-error">
+            City not found. Please try another location.
+          </div>
+          <div class="search-message message-success">
+            Location successfully added to your favorites!
+          </div>
+        </div>
+        
+        <div class="search-history">
+          <h3 class="history-title">Recent Searches</h3>
+          <ul class="history-list">
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              New York, US
+            </li>
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              London, UK
+            </li>
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              Tokyo, JP
+            </li>
+            <li class="history-item">
+              <i class="fas fa-history"></i>
+              Sydney, AU
+            </li>
+          </ul>
+        </div>
+        
+        <div class="action-buttons">
+          <button class="action-button">
+            <i class="fas fa-trash-alt"></i>
+            Clear History
+          </button>
+          <button class="action-button primary">
+            <i class="fas fa-plus"></i>
+            Add Current Location
+          </button>
+        </div>
+      </div>
+      
+      <!-- Search Results Preview -->
+      <div class="weather-card">
+        <div class="weather-header">
+          <div class="location-info">
+            <h2>London, UK</h2>
+            <p>Friday, May 9, 2025 | 4:42 PM</p>
+          </div>
+          <div class="weather-icon">
+            <img src="img/rain.png" alt="Rainy" onerror="this.src='/api/placeholder/80/80'">
+          </div>
+        </div>
+        <div class="weather-body">
+          <div class="temperature">61°F</div>
+          <div class="weather-description">Light rain</div>
+          <div class="weather-info">
+            <div class="info-item">
+              <span class="info-label">Feels Like</span>
+              <span class="info-value">58°F</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Wind</span>
+              <span class="info-value">12 mph</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Humidity</span>
+              <span class="info-value">75%</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Pressure</span>
+              <span class="info-value">1008 hPa</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Favorite Locations -->
+      <section class="forecast-section">
+        <h3 class="section-title">Your Favorite Locations</h3>
+        <div class="forecast-cards">
+          <div class="forecast-card">
+            <div class="forecast-day">New York</div>
+            <div class="forecast-icon">
+              <img src="img/sun.png" alt="Sunny" onerror="this.src='/api/placeholder/60/60'">
+            </div>
+            <div class="forecast-temp">
+              <span class="max-temp">72°F</span>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Paris</div>
+            <div class="forecast-icon">
+              <img src="img/cloud.png" alt="Cloudy" onerror="this.src='/api/placeholder/60/60'">
+            </div>
+            <div class="forecast-temp">
+              <span class="max-temp">63°F</span>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Tokyo</div>
+            <div class="forecast-icon">
+              <img src="img/sun.png" alt="Sunny" onerror="this.src='/api/placeholder/60/60'">
+            </div>
+            <div class="forecast-temp">
+              <span class="max-temp">78°F</span>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Sydney</div>
+            <div class="forecast-icon">
+              <img src="img/haze.png" alt="Haze" onerror="this.src='/api/placeholder/60/60'">
+            </div>
+            <div class="forecast-temp">
+              <span class="max-temp">65°F</span>
+            </div>
+          </div>
+          <div class="forecast-card">
+            <div class="forecast-day">Add New</div>
+            <div class="forecast-icon">
+              <i class="fas fa-plus-circle" style="font-size: 60px; color: #ddd;"></i>
+            </div>
+            <div class="forecast-temp">
+              <span class="max-temp">Location</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4 class="footer-title">WeatherNow</h4>
+          <p>Get accurate weather forecasts for any location around the world. Stay informed about weather conditions wherever you go.</p>
+          <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Current Weather</a></li>
+            <li><a href="search.html">Search Location</a></li>
+            <li><a href="world.html">World Weather</a></li>
+            <li><a href="#">Weather Maps</a></li>
+            <li><a href="#">Alerts</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 class="footer-title">Contact Us</h4>
+          <ul class="footer-links">
+            <li><i class="fas fa-envelope"></i> info@weathernow.com</li>
+            <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+            <li><i class="fas fa-map-marker-alt"></i> 123 Weather St, Cloud City</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 WeatherNow. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>
