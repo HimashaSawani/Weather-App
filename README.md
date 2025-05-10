@@ -25,3 +25,6 @@ To run this project locally, follow the steps below:
 ```bash
 git clone <repository-url>
 cd <folder-name>
+##Preview
+
+![Weather App Screenshot](weatherappss.png)
